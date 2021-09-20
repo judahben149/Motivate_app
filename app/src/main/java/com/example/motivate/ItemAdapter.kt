@@ -12,7 +12,7 @@ import com.example.motivate.model.Motivation
 class ItemAdapter (private val context: Context, private val dataSet : List<Motivation>) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>(){
 
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-        //val motivationText : TextView = view.findViewById(R.id.item_title)
+        val motivationText : TextView = view.findViewById(R.id.item_title)
         val motivationImage : ImageView = view.findViewById(R.id.item_image)
     }
 
@@ -26,7 +26,7 @@ class ItemAdapter (private val context: Context, private val dataSet : List<Moti
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataSet[position]
-        //holder.motivationText.text = context.resources.getString(item.stringResourceId)
+        holder.motivationText.text = context.resources.getString(item.stringResourceId)
         holder.motivationImage.setImageResource(item.imageResourceId)
     }
 
